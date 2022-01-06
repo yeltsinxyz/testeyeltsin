@@ -3,8 +3,12 @@
 function camicado_styles() {
 
     wp_enqueue_style( 'gotham-font', '//fonts.cdnfonts.com/css/gotham?styles=17581,17579', array(), null );
+    wp_enqueue_style( 'swiper-css', '//unpkg.com/swiper@7/swiper-bundle.min.css', array(), null );
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bootstrap/dist/css/bootstrap.min.css', array(), '5.1' );
-    wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/bootstrap/dist/js/bootstrap.bundle.min.js', array(), '5.1' );
+
+    wp_enqueue_script( 'bootstrapjs', get_template_directory_uri() . '/bootstrap/dist/js/bootstrap.bundle.min.js', array(), '5.1', true );
+    wp_enqueue_script( 'swiper-js', '//unpkg.com/swiper@7/swiper-bundle.min.js', array(), null, true );
+    wp_enqueue_script( 'swiper-call', get_template_directory_uri( ) . '/js/slider.js', array('swiper-js'), null, true );
 
 }
 add_action( 'wp_enqueue_scripts', 'camicado_styles' );

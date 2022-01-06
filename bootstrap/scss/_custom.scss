@@ -84,6 +84,11 @@
 
     margin-top: -80px;
 
+    .swiper {
+        width: 100%;
+        height: 400px;
+    }
+
 }
 
 // CARDS - ARTICLES
@@ -270,4 +275,23 @@
 // BANNER DA TELA PRINCIPAL
 .banner-home {
     padding: 96px 0px;
+}
+
+// CONTENT
+.news-blog-description {
+
+    padding-top: 85px;
+    padding-bottom: 55px;
+
+    h3 {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 32px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+
 }
