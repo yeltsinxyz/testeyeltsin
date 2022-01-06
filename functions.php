@@ -65,3 +65,51 @@ if( function_exists('acf_add_options_page') ):
     ));
     
 endif;
+
+/**
+ * Positron functions and definitions
+ *
+ */
+
+function positronx_set_post_views($post_id) {
+    $count_key = 'wp_post_views_count';
+    $count = get_post_meta($post_id, $count_key, true);
+     
+    if($count == '') {
+        $count = 0;
+        delete_post_meta($post_id, $count_key);
+        add_post_meta($post_id, $count_key, '0');
+    } else {
+        $count++;
+        update_post_meta($post_id, $count_key, $count);
+    }
+}
+function positronx_track_post_views ($post_id) {
+    if ( !is_single() ) 
+    return;
+     
+    if ( empty ( $post_id) ) {
+        global $post;
+        $post_id = $post->ID;    
+    }
+     
+    positronx_set_post_views($post_id);
+}
+ 
+add_action( 'wp_head', 'positronx_track_post_views');
+
+
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+function add_additional_class_on_li($classes, $item, $args) {
+    if(isset($args->add_li_class)) {
+        $classes[] = $args->add_li_class;
+    }
+    return $classes;
+}
+add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+function _namespace_modify_menuclass($ulclass) {
+    return preg_replace('/<a /', '<a class="nav-link"', $ulclass);
+}
+
+add_filter('wp_nav_menu', '_namespace_modify_menuclass');

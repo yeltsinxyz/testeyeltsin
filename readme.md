@@ -1,10 +1,11 @@
 # TODO
 
-- [] Header Dinâmico
+- [x] Header Dinâmico
 - [] Slider Dinâmico
 - [] Novidades, ACF
-- [] Banner Home
+- [x] Banner Home
 - [] Recentes, ACF
-- [] Loop WordPress
-- [] Newsletter
-- [] Footer Dinâmico
+- [x] Loop WordPress
+- [x] Featured Image e Categoria do Loop
+- [x] Newsletter
+- [x] Footer Dinâmico

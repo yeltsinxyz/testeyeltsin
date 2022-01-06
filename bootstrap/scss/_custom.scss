@@ -240,6 +240,10 @@
 
     margin-top: 60px;
 
+    .featured-article-image:nth-child(2) {
+        margin-top: 100px;
+    }
+
     @include media-breakpoint-up(lg) {
         margin-top: 120px;
     }
@@ -277,6 +281,66 @@
     padding: 96px 0px;
 }
 
+.newsletter {
+    
+    margin-top: 60px;
+
+    @include media-breakpoint-up(lg) {
+        margin-top: 120px;
+    }
+
+    h2 {
+        font-size: 60px;
+        line-height: 60px;
+        text-transform: uppercase;
+        color: #E5E5E5;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 95px;
+            line-height: 90px;
+        }
+
+    }
+
+    hr {
+        border: 1px solid rgba(212, 20, 44, 0.4);
+        width: 150px;
+        height: 1px;
+        margin-bottom: 35px;
+        
+        @include media-breakpoint-up(lg) {
+            width: 250px;
+        }
+
+    }
+
+    h3 {
+        font-weight: bold;
+        line-height: 24px;
+        font-size: 25px;
+        color: #272727;
+    }
+
+    input {
+        border-radius: 5px;
+        border: 1px solid #C4C4C4;
+        font-size: 14px;
+
+    }
+
+    ::placeholder {
+        color: #A39D9D;
+    }
+
+    .btn {
+        width: 100%;
+        background-color: #D4142C;
+        border-radius: 5px;
+        color: #FFF;
+    }
+
+}
+
 // CONTENT
 .news-blog-description {
 
@@ -292,6 +356,64 @@
     p {
         font-size: 14px;
         line-height: 20px;
+    }
+
+}
+
+footer {
+    background-color: #4D4D4D;
+    padding: 40px;
+    color: #FFF;
+
+    .copyright {
+        text-align: center;
+    }
+
+    .menuFooter{
+        font-size: 14px;
+        text-transform: uppercase;
+        
+        li {
+            padding-right: 20px;
+
+            a { 
+                color: #FFF;
+                text-decoration: none;
+                &:hover {
+                    color: rgb(228, 228, 228);
+                }
+            }
+
+            &:last-child {
+                padding-right: 0px;
+            }
+
+        }
+
+    }
+
+    .social {
+        font-size: 24px;
+        color: #FFF;
+
+        li {
+            padding-right: 20px;
+
+            a {
+                color: #FFF;
+
+                &:hover {
+                    color: rgb(228, 228, 228);
+                }
+
+            }
+
+            &:last-child {
+                padding-right: 0px;
+            }
+
+        }
+
     }
 
 }

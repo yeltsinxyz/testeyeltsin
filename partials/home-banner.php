@@ -2,14 +2,7 @@
 <div class="banner-home container">
     <div class="row">
         <div class="col">
-            <?php if ( have_rows( 'banner_home' ) ) : ?>
-                <?php while ( have_rows( 'banner_home' ) ) : the_row(); ?>
-                    <?php if ( get_sub_field( 'image' ) ) : ?>
-                        <img src="<?php the_sub_field( 'image' ); ?>" class="img-fluid" />
-                    <?php endif ?>
-                    <?php the_sub_field( 'link' ); ?>
-                <?php endwhile; ?>
-            <?php endif; ?>
+            <a href="<?php the_field('url_banner', 'option'); ?>" target="_blank"><img src="<?php the_field('imagem_banner', 'option'); ?>" class="img-fluid" alt=""></a>
         </div>
     </div>
 </div>

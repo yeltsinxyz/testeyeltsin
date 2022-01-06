@@ -10414,6 +10414,9 @@ textarea.form-control-lg {
 .news-top-articles {
   margin-top: 60px;
 }
+.news-top-articles .featured-article-image:nth-child(2) {
+  margin-top: 100px;
+}
 @media (min-width: 960px) {
   .news-top-articles {
     margin-top: 120px;
@@ -10447,6 +10450,61 @@ textarea.form-control-lg {
   padding: 96px 0px;
 }
 
+.newsletter {
+  margin-top: 60px;
+}
+@media (min-width: 960px) {
+  .newsletter {
+    margin-top: 120px;
+  }
+}
+.newsletter h2, .newsletter .h2 {
+  font-size: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #E5E5E5;
+}
+@media (min-width: 960px) {
+  .newsletter h2, .newsletter .h2 {
+    font-size: 95px;
+    line-height: 90px;
+  }
+}
+.newsletter hr {
+  border: 1px solid rgba(212, 20, 44, 0.4);
+  width: 150px;
+  height: 1px;
+  margin-bottom: 35px;
+}
+@media (min-width: 960px) {
+  .newsletter hr {
+    width: 250px;
+  }
+}
+.newsletter h3, .newsletter .h3 {
+  font-weight: bold;
+  line-height: 24px;
+  font-size: 25px;
+  color: #272727;
+}
+.newsletter input {
+  border-radius: 5px;
+  border: 1px solid #C4C4C4;
+  font-size: 14px;
+}
+.newsletter ::-moz-placeholder {
+  color: #A39D9D;
+}
+.newsletter ::placeholder {
+  color: #A39D9D;
+}
+.newsletter .btn {
+  width: 100%;
+  background-color: #D4142C;
+  border-radius: 5px;
+  color: #FFF;
+}
+
 .news-blog-description {
   padding-top: 85px;
   padding-bottom: 55px;
@@ -10459,5 +10517,47 @@ textarea.form-control-lg {
 .news-blog-description p {
   font-size: 14px;
   line-height: 20px;
+}
+
+footer {
+  background-color: #4D4D4D;
+  padding: 40px;
+  color: #FFF;
+}
+footer .copyright {
+  text-align: center;
+}
+footer .menuFooter {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+footer .menuFooter li {
+  padding-left: 20px;
+}
+footer .menuFooter li a {
+  color: #FFF;
+  text-decoration: none;
+}
+footer .menuFooter li a:hover {
+  color: #e4e4e4;
+}
+footer .menuFooter li:last-child {
+  padding-left: 0px;
+}
+footer .social {
+  font-size: 24px;
+  color: #FFF;
+}
+footer .social li {
+  padding-left: 20px;
+}
+footer .social li a {
+  color: #FFF;
+}
+footer .social li a:hover {
+  color: #e4e4e4;
+}
+footer .social li:last-child {
+  padding-left: 0px;
 }
 /*# sourceMappingURL=bootstrap.rtl.css.map */

@@ -8,56 +8,47 @@
     </div>
     <div class="row">
 
-        <div class="col-lg-4 col-sm-6 col-12 featured-article-image">
+        <?php
 
-            <div class="content" style="background-image: url('<?php echo get_template_directory_uri() ?>/img/featured-image-2.png'); background-size: cover;">
-
-                <h4>Inspire-se</h4>
-
-                <h3><a href="">Lorem ipsum dolor sit amet consect</a></h3>
-
-                <ul class="meta nav">
-                    <li class="author">Por Camicado</li>
-                    <li>06. Setembro</li>
-                </ul>
-
-            </div>
-
-        </div>
-
-        <div class="col-lg-4 col-sm-6 col-12 featured-article-image">
-
-            <div class="content" style="background-image: url('<?php echo get_template_directory_uri() ?>/img/featured-image-2.png'); background-size: cover;">
-
-                <h4>Inspire-se</h4>
-
-                <h3><a href="">Lorem ipsum dolor sit amet consect</a></h3>
-
-                <ul class="meta nav">
-                    <li class="author">Por Camicado</li>
-                    <li>06. Setembro</li>
-                </ul>
-
-            </div>
-
-        </div>
+        $popularpostbyview = array(
+            'meta_key'  => 'wp_post_views_count', // set custom meta key
+            'orderby'    => 'meta_value_num',
+            'order'      => 'DESC',
+            'posts_per_page' => 4
+        );
         
+        // Invoke the query
+        $prime_posts = new WP_Query( $popularpostbyview );
+        
+        if ( $prime_posts->have_posts() ) :
+            while ( $prime_posts->have_posts() ) : $prime_posts->the_post();
+        ?>
         <div class="col-lg-4 col-sm-6 col-12 featured-article-image">
 
-            <div class="content" style="background-image: url('<?php echo get_template_directory_uri() ?>/img/featured-image-2.png'); background-size: cover;">
+            <div class="content" style="background-image: url('<?php the_post_thumbnail_url(); ?>'); background-size: cover;">
 
-                <h4>Inspire-se</h4>
+                <?php $categories = get_the_category();
+    
+                if ( ! empty( $categories ) ) {
+                ?>
+                <h4><?php echo esc_html( $categories[0]->name ); ?></h4>
+                <?php } ?>
 
-                <h3><a href="">Lorem ipsum dolor sit amet consect</a></h3>
+                <h3><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 
                 <ul class="meta nav">
-                    <li class="author">Por Camicado</li>
-                    <li>06. Setembro</li>
+                    <li class="author">Por <?php the_author(); ?></li>
+                    <li><?php the_date(); ?></li>
                 </ul>
 
             </div>
 
         </div>
+        <?php
+            endwhile;
+            wp_reset_postdata();
+        endif;
+        ?>
 
     </div>
 </div>

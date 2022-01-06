@@ -25,10 +25,16 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a href="" class="nav-link">Casamento</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Decor</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Gourmet</a></li>
-                    <li class="nav-item"><a href="" class="nav-link">Inspire-se</a></li>
+                    <?php 
+                        wp_nav_menu(array(
+                            'menu'           => 'header',
+                            'items_wrap' => '%3$s',
+                            'container' => false,
+                            'depth'         => 1,
+                            'fallback_cb'   => false,
+                            'add_li_class'  => 'nav-item'
+                        ));
+                    ?>
                     <li class="nav-item">
                         <a href="" class="nav-link">           
                             <svg width="18" height="18" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
