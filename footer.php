@@ -14,17 +14,17 @@
 
         <div class="row">
 
-            <div class="col-4">
+            <div class="col-lg-4 col-12">
                 <h3>Fique por dentro das nossas novidades por e-mail.</h3>
             </div>
 
-            <div class="col-8">
+            <div class="col-lg-8 col-12">
                 <form action="" class="row align-items-center">
-                    <div class="col-9">
+                    <div class="col-lg-9 col-12">
                         <label for="email" class="visually-hidden">E-mail</label>
                         <input type="email" name="email" id="email" placeholder="Digite seu e-mail" class="form-control form-control-lg">
                     </div>
-                    <div class="col-3">
+                    <div class="col-lg-3 col-12">
                         <input type="button" value="Enviar" class="btn btn-lg">
                     </div>
                 </form>
@@ -37,10 +37,10 @@
     <!-- blog description -->
     <div class="news-blog-description container">
         <div class="row">
-            <div class="col-2">
+            <div class="col-lg-2 col-12">
                 <h3><?php the_field('content_title', 'option'); ?></h3>
             </div>
-            <div class="col">
+            <div class="col-lg-10 col-12">
                 <p><?php the_field('content_text', 'option'); ?></p>
             </div>
         </div>

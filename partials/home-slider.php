@@ -1,3 +1,4 @@
+<?php /*
 <!-- full width slider -->
 <div class="full-width-slider container-fluid">
 
@@ -46,3 +47,4 @@
     </div>
     
 </div>
+*/ ?>
