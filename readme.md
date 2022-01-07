@@ -2,9 +2,10 @@
 
 - [x] Header Dinâmico
 - [] Slider Dinâmico
-- [] Novidades, ACF
+- [] Ler mais, AJAX Loading
+- [x] Novidades, ACF
 - [x] Banner Home
-- [] Recentes, ACF
+- [x] Recentes, ACF
 - [x] Loop WordPress
 - [x] Featured Image e Categoria do Loop
 - [x] Newsletter

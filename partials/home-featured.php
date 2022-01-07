@@ -12,75 +12,70 @@
 
     <div class="row news-featured-articles">
 
-        <?php
-            if( have_rows('featured_posts') ):
-                while( have_rows('featured_posts') ) : the_row();
-                $featured_posts = get_sub_field('postagem');
-                $class = get_sub_field('formato_de_exibicao');
-                if( $posts ):
-                    $permalink = get_permalink( $featured_post->ID );
-                    $title = get_the_title( $featured_post->ID );
-                    $summary = get_field( 'field_name', $featured_post->ID );
-        ?>
-        <div class="col-lg-4 col-sm-6 col-12 featured-article-<?php echo esc_html( $class ); ?>">
+        <?php if( have_rows('destaques', 'option')): ?>
+            <?php while ( have_rows('destaques', 'option')) : the_row(); ?>
+            <?php // set up post object
+                $post_object = get_sub_field('destaques_artigo');
+                if( $post_object ) :
+                $post = $post_object;
+                setup_postdata($post);
+            ?>
+            <?php
+                if( get_field('formato_do_post') == 'full' ) {
+            ?>
+            <div class="col-lg-4 col-sm-6 col-12 featured-article-full">
 
             <img src="<?php echo get_template_directory_uri() ?>/img/featured-image-1.png" class="img-fluid" alt="">
-            
-            <h4>Casamento</h4>
 
-            <h3><a href="<?php echo esc_url( $permalink ); ?>"><?php echo esc_html( $title ); ?></a></h3>
+            <?php $categories = get_the_category();
+
+            if ( ! empty( $categories ) ) {
+            ?>
+            <h4><?php echo esc_html( $categories[0]->name ); ?></h4>
+            <?php } ?>
+
+            <h3><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
 
             <ul class="meta nav">
-                <li class="author">Por Camicado</li>
-                <li>06. Setembro</li>
+                <li class="author">Por <?php the_author(); ?></li>
+                <li><?php the_date(); ?></li>
             </ul>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim</p>
-        
-        </div>
-        <?php
-            endif;
-            endwhile;
-            else :
-        ?>
-        <div class="col featured-article-full">
-            <h4>Nenhum artigo encontrado!</h4>
-        </div>
-        <?php endif; ?>
-
-        <div class="col-lg-4 col-sm-6 col-12 featured-article-image">
-
-            <div class="content" style="background-image: url('<?php echo get_template_directory_uri() ?>/img/featured-image-2.png'); background-size: cover;">
-        
-                <h4>Inspire-se</h4>
-
-                <h3><a href="">Lorem ipsum dolor sit amet consect</a></h3>
-
-                <ul class="meta nav">
-                    <li class="author">Por Camicado</li>
-                    <li>06. Setembro</li>
-                </ul>
+            <?php the_excerpt(); ?>
 
             </div>
+            <?php } ?>
+            <?php
+                if( get_field('formato_do_post') == 'image' ) {
+            ?>
+            <div class="col-lg-4 col-sm-6 col-12 featured-article-image">
 
-        </div>
-        
-        <div class="col-lg-4 col-sm-6 col-12 featured-article-full">
+                <div class="content" style="background-image: url('<?php echo get_template_directory_uri() ?>/img/featured-image-2.png'); background-size: cover;">
 
-            <img src="<?php echo get_template_directory_uri() ?>/img/featured-image-1.png"  class="img-fluid" alt="">
-            
-            <h4>Casamento</h4>
+                    <?php $categories = get_the_category();
 
-            <h3><a href="">Lorem ipsum dolor sit amet consect</a></h3>
-            
-            <ul class="meta nav">
-                <li class="author">Por Camicado</li>
-                <li>06. Setembro</li>
-            </ul>
+                    if ( ! empty( $categories ) ) {
+                    ?>
+                    <h4><?php echo esc_html( $categories[0]->name ); ?></h4>
+                    <?php } ?>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim</p>
-        
-        </div>
+                    <h3><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
+
+                    <ul class="meta nav">
+                        <li class="author">Por <?php the_author(); ?></li>
+                        <li><?php the_date(); ?></li>
+                    </ul>
+
+                </div>
+
+            </div>
+            <?php } ?>
+            <?php
+            wp_reset_postdata();
+            endif;
+            endwhile;       
+            ?>
+        <?php endif; ?>
 
     </div>
 

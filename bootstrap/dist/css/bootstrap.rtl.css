@@ -10298,6 +10298,10 @@ textarea.form-control-lg {
   width: 100%;
   height: 400px;
 }
+.full-width-slider .swiper-slider {
+  width: 100%;
+  height: 400px;
+}
 
 .featured-article-full {
   margin-bottom: 30px;
@@ -10523,6 +10527,9 @@ footer {
   background-color: #4D4D4D;
   padding: 40px;
   color: #FFF;
+}
+footer .copyinfo {
+  margin-bottom: 50px;
 }
 footer .copyright {
   text-align: center;

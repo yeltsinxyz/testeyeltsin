@@ -48,7 +48,7 @@
 
     <footer class="footer-site container-fluid">
 
-        <div class="row">
+        <div class="row copyinfo">
 
             <div class="col-8">
                 <ul class="nav menuFooter">
