@@ -2,7 +2,7 @@
 
 - [x] Header Dinâmico
 - [] Slider Dinâmico
-- [] Ler mais, AJAX Loading
+- [x] Ler mais, AJAX Loading // ! Sem AJAX por causa do prazo
 - [x] Novidades, ACF
 - [x] Banner Home
 - [x] Recentes, ACF

@@ -19,12 +19,12 @@
             </div>
 
             <div class="col-8">
-                <form action="" class="row row-cols-lg-auto g-3 align-items-center">
-                    <div class="col-auto">
+                <form action="" class="row align-items-center">
+                    <div class="col-9">
                         <label for="email" class="visually-hidden">E-mail</label>
                         <input type="email" name="email" id="email" placeholder="Digite seu e-mail" class="form-control form-control-lg">
                     </div>
-                    <div class="col-auto">
+                    <div class="col-3">
                         <input type="button" value="Enviar" class="btn btn-lg">
                     </div>
                 </form>

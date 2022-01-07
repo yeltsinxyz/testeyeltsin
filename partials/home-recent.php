@@ -94,6 +94,10 @@
                 <p>Nenhum artigo encontrado</p>
             </div>
         <?php endif; ?>
+        
+        <div class="d-grid gap-2 col-10 mx-auto">
+            <a href="" class="btn btn-outline-danger btn-lg">Carregar mais posts</a>
+        </div>
 
     </div>
 </div>
